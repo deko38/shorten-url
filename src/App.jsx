@@ -17,14 +17,14 @@ const App = () => {
             setList([...list, { original: input, shortened: null }]);
             setNewUrl(input);
         } else {
-            alert("Please enter a URL");
+            alert("Please enter url in inout");
         }
     };
 
 
     useEffect(() => {
         if (newUrl) {
-            axios.post("https://cleanuri.com/api/v1/shorten", { url: newUrl })
+            axios.post("https://cleanuri.com/api/v1/shorten", {  newUrl })
 
                 .then((response) => {
                     setList((prevList) =>
